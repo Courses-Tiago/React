@@ -1,0 +1,15 @@
+npm create vite@latest
+npm run dev
+
+Create components on components folder calling MyPackage (camel case)
+
+arrow functions javascript
+
+ATTENTION:
+<>some</> seems to be different from <div>some</div>
+
+hooks:
+- Always starts with useSomeThing;
+- Custom hooks can be created;
+- Need to be imported;
+- useState is the most used;
