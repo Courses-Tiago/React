@@ -1,14 +1,2 @@
 TypeScript is an extension of JavaScript and TS code does not work
 on browsers, the TS code must be compiled to JS to work.
-
-//Union/alternative types
-let userId: string | number = 'abcs23';
-userId = 123;
-
-let hobbies: Array<string>; or
-let hobbies: string[];
-
-function add(a: number, b: number) {
-  const result = a + b;
-  return result;
-}
