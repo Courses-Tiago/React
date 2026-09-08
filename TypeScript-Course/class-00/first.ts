@@ -66,3 +66,44 @@ function login(cred: Credentials) {
 }
 
 login(new AuthCredentials('abc', 'me@ex.com', 'tiago'));
+
+
+// Merging types first way
+type Admin = {
+  permissions: string[];
+};
+
+type AppUser = {
+  userName: string;
+};
+
+type AppAdmin = Admin & AppUser;
+
+let admin: AppAdmin;
+
+admin = {
+  permissions: ['login', 'who'],
+  userName: 'Rafaela'
+}
+
+// Merging types second way
+interface Admin2 {
+  permissions: string[];
+};
+
+interface AppUser2 {
+  userName: string;
+};
+
+interface AppAdmin2 extends Admin2, AppUser2 {}
+
+let admin2: AppAdmin2;
+
+admin2 = {
+  permissions: ['login', 'who'],
+  userName: 'Rafaela'
+}
+
+//specific literal type, it won't accept the other strings
+let role: 'admin' | 'user' | 'editor';
+role = 'editor';
