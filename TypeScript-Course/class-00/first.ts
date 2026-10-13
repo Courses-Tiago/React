@@ -105,5 +105,28 @@ admin2 = {
 }
 
 //specific literal type, it won't accept the other strings
-let role: 'admin' | 'user' | 'editor';
+//let role: 'admin' | 'user' | 'editor';
+type Role = 'admin' | 'user' | 'editor';
+let role: Role;
 role = 'editor';
+
+function performAction(action: string | number, role: Role) {
+  if (role === 'admin' && typeof action === 'string') {
+    // ...
+    console.log(action);
+  }
+}
+
+function merge<T,U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b,
+  };
+}
+
+const newUser = merge<{name: string }, {age: number}>(
+  {name: 'Tiago'}, 
+  {age: 36}
+);
+
+newUser.age = 37;
